@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务分发系统</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static',filename="./css/style.css")}}">
+<body>
+    <h1>上传excel文件分发任务</h1>
+    <form action="" enctype='multipart/form-data' method='POST' id="up_form">
+        <input type="file" accept="all" name="file" style="margin-top:20px;"/ onchange="change_submit()">
+    </form>
+
+	<br \>
+	<br \>
+	<br \>
+	形式为：
+	<br \>
+	<br \>
+	<br \>
+	<table border="1" cellspacing="0">
+	  <tr>
+	    <th>机器名字</th>
+	    <th>任务名字</th>
+	  </tr>
+	  <tr>
+	    <th>1车间1号</th>
+	    <th>2车间1号</th>
+	  </tr>
+	  <tr>
+	    <td>A任务</td>
+	    <td>B任务</td>
+	  </tr>
+	</table>
+</body>
+
+<script>
+
+	function change_submit()
+	{
+		document.getElementById("up_form").submit();
+	}
+
+</script>
+
+</html>

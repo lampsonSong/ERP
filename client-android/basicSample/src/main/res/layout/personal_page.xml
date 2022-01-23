@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/person_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/end_state_btn"
+        android:minHeight="?attr/actionBarSize"
+        app:title="ToolBarDemo"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
+        />
+
+    <ImageView
+        android:id="@+id/person_profile"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="90dp"
+        android:src="@mipmap/profile" />
+
+    <TextView
+        android:id="@+id/person_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="员工姓名/工号"
+        android:textSize="14sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="任务1"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/end_state_btn"
+        android:gravity="center"
+        android:onClick="state_btn_clicked"
+        android:padding="10dp"
+        android:text="未开始任务"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+</LinearLayout>

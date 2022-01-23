@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务分发系统</title>
+</head>
+<link rel="stylesheet" href="{{url_for('static',filename="./css/style.css")}}">
+<body>
+    <h1>上传excel文件分发任务</h1>
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <input type="file" accept="all" name="file" style="margin-top:20px;"/>
+        <br>
+        <i>请输入你当前的心情（开心、超开心、超超开心）：</i>
+        <input type="text" class="txt_input" name="name"  value="可以的" style="margin-top:10px;"/>
+        <input type="submit" value="上传" class="button" style="margin-top:15px;"/>
+    </form>
+</body>
+</html>

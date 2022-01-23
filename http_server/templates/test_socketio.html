@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/socket-4.4.0.io.js"></script>
+</head>
+
+<body onload="onload();">
+
+<table border="1" id="mytable">
+  <tr>
+    <th>机器名字</th>
+    <th>工作状态</th>
+  </tr>
+  <tr>
+	<td>0</td>
+	<td>0</td>
+  </tr>
+
+</table>
+
+
+
+<script>
+function onload() {
+    $(document).ready(function() {
+        namespace='/test_conn'
+        var socket = io.connect('ws://192.168.1.5:8090/test_conn');
+        //或者使用 var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+            
+        socket.on('server_response', function(res) {
+            var msg = res.data;
+            console.log(msg['machine_name']);
+            console.log(msg['machine_state']);
+
+			mytable = document.getElementById("mytable")
+			if(msg['msg_type'] == "work")
+			{
+				mytable.rows[1].cells[0].innerHTML = msg['machine_name']
+				mytable.rows[1].cells[1].innerHTML = msg['machine_state']
+				if(msg['machine_state'] == 0)
+				{
+					mytable.rows[1].cells[1].innerHTML = '<img src="./static/images/red_button.png" height=200>'
+				}
+				if(msg['machine_state'] == 1)
+				{
+					mytable.rows[1].cells[1].innerHTML = '<img src="./static/images/green_button.png" height=200>'
+				}
+			}
+        }); 
+    }); 
+}   
+</script>
+
+</body>
+
+</html>
